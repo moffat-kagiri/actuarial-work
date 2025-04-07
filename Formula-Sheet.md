@@ -2,7 +2,7 @@
 
 ---
 
-*Aligned with IFOA Standards*
+## Aligned with IFOA Standards
 
 ---
 
@@ -20,7 +20,6 @@
    - $\delta$: Force of interest ($\delta = \ln(1+i)$).
 
    $$
-
 
    $$
 2. **Discount Factor**
@@ -43,6 +42,37 @@
    $$
    s_{\angl{n}} = \frac{(1+i)^n - 1}{i}, \quad \ddot{s}_{\angl{n}} = \frac{(1+i)^n - 1}{d}
    $$
+
+### Additional Financial Mathematics Formulas
+
+1. **Perpetuity**
+    - Annuity-immediate:
+        $$
+         a_{\langle\infty\rangle} = \frac{1}{i}
+        $$
+    - Annuity-due:
+        $$
+         \ddot{a}_{\langle\infty\rangle} = \frac{1}{d}
+        $$
+
+2. **Varying Annuities**
+    - Increasing Annuity-Immediate:
+        $$
+        (Ia)_{\angl{n}} = \frac{\ddot{a}_{\angl{n}} - nv^n}{i}
+        $$
+    - Increasing Annuity-Due:
+        $$
+        (I\ddot{a})_{\angl{n}} = \frac{\ddot{a}_{\angl{n}} - nv^n}{d}
+        $$
+3. **Continuous Annuities**
+    - Present Value:
+        $$
+        \bar{a}_{\angl{n}} = \frac{1 - v^n}{\delta}
+        $$
+    - Future Value:
+        $$
+        \bar{s}_{\angl{n}} = \frac{(1+i)^n - 1}{\delta}
+        $$
 
 ---
 
@@ -90,6 +120,44 @@
    \bar{A}_x = \int_0^{\infty} v^t \cdot {}_t p_x \cdot \mu_{x+t} \, dt
    $$
 
+### Additional Life Contingencies Formulas
+
+1. **Present Value of Whole Life Insurance**
+    - Discrete:
+        $$
+        A_x = \sum_{k=0}^{\infty} v^{k+1} \cdot {}_k p_x \cdot q_{x+k}
+        $$
+    - Continuous:
+        $$
+        \bar{A}_x = \int_0^{\infty} v^t \cdot {}_t p_x \cdot \mu_{x+t} \, dt
+        $$
+2. **Variance of the Present Value of a Whole Life Insurance**
+    $$
+    Var(Z) = {}^{2}A_x - (A_x)^2
+    $$
+    where
+    $$
+    {}^{2}A_x = \sum_{k=0}^{\infty} v^{2(k+1)} \cdot {}_k p_x \cdot q_{x+k}
+    $$
+3. **Temporary Life Annuity**
+    - Annuity-due:
+        $$
+        \ddot{a}_{x:\angl{n}} = \sum_{k=0}^{n-1} v^k \cdot {}_k p_x
+        $$
+    - Continuous:
+        $$
+        \bar{a}_{x:\angl{n}} = \int_0^n v^t \cdot {}_t p_x \, dt
+        $$
+4. **m-thly Life Annuities**
+    - Annuity-due:
+        $$
+        \ddot{a}_x^{(m)} \approx \ddot{a}_x - \frac{m-1}{2m}
+        $$
+5. **m-thly Life Insurance**
+    - $$
+        A_x^{(m)} \approx A_x + \frac{m-1}{2m}i
+        $$
+
 ---
 
 ### **Mortality and Survival Functions**
@@ -103,7 +171,6 @@
    - $\mu_x$: Force of mortality.
 
    $$
-
 
    $$
 2. **Deferred Mortality Probability**
@@ -121,6 +188,26 @@
    $$
    {}_t p_{[x]+s} = \frac{l_{x+s+t}}{l_{x+s}}
    $$
+
+### Additional Mortality and Survival Functions
+
+1. **Curtate Expectation of Life**
+    $$
+    e_x = \sum_{k=1}^{\infty} {}_k p_x = \sum_{k=0}^{\infty} {}_k p_x - 1 = \ddot{a}_x -1
+    $$
+2. **De Moivre's Law**
+    $$
+    {}_t p_x = \frac{\omega - x - t}{\omega - x}, \quad 0 \le t \le \omega - x
+    $$
+    where $\omega$ is the limiting age.
+3. **Uniform Distribution of Deaths (UDD)**
+    $$
+    {}_t p_x = 1 - t \cdot q_x, \quad 0 \le t \le 1
+    $$
+4. **Mortality Rate**
+    $$
+    q_x = 1 - p_x
+    $$
 
 ---
 
@@ -146,6 +233,21 @@
    $$
    A_{x:\angl{n}}^1 = \frac{M_x - M_{x+n}}{D_x}
    $$
+
+### **Additional Commutation Functions**
+
+1. **Immediate Annuity**
+    $$
+    a_x = \frac{N_{x+1}}{D_x}
+    $$
+2. **Whole Life Insurance**
+    $$
+    A_x = \frac{M_x}{D_x}
+    $$
+3. **Temporary Annuity**
+    $$
+    \ddot{a}_{x:n} = \frac{N_x - N_{x+n}}{D_x}
+    $$
 
 ---
 
@@ -174,6 +276,23 @@
    f(x) = \frac{\beta^\alpha}{\Gamma(\alpha)} x^{\alpha-1} e^{-\beta x}, \quad x \geq 0
    $$
 
+### **Additional Distributions**
+
+1. **Chi-Squared Distribution**
+    $$
+    f(x; k) = \frac{1}{2^{k/2} \Gamma(k/2)} x^{k/2 - 1} e^{-x/2}
+    $$
+    where $k$ is the degrees of freedom.
+2. **t-Distribution**
+    $$
+    f(t; \nu) = \frac{\Gamma(\frac{\nu+1}{2})}{\sqrt{\nu\pi}\Gamma(\frac{\nu}{2})} \left(1 + \frac{t^2}{\nu}\right)^{-\frac{\nu+1}{2}}
+    $$
+    where $\nu$ is the degrees of freedom.
+3. **Weibull Distribution**
+    $$
+    f(x) = \frac{k}{\lambda} \left(\frac{x}{\lambda}\right)^{k-1} e^{-(x/\lambda)^k}, \quad x \geq 0
+    $$
+
 ---
 
 ### **Expectation and Variance**
@@ -191,6 +310,17 @@
    \text{Cov}(X, Y) = E[XY] - E[X]E[Y]
    $$
 
+### **Additional Expectation and Variance Formulas**
+
+1. **Law of Total Variance**
+    $$
+    Var(X) = E[Var(X|Y)] + Var(E[X|Y])
+    $$
+2. **Correlation**
+    $$
+    \rho_{X,Y} = \frac{Cov(X,Y)}{\sigma_X \sigma_Y}
+    $$
+
 ---
 
 ### **Hypothesis Testing**
@@ -207,6 +337,16 @@
    $$
    t = \frac{\bar{X} - \mu}{s/\sqrt{n}}
    $$
+
+### **Additional Hypothesis Testing Formulas**
+
+1. **F-Test Statistic**
+    $$
+    F = \frac{s_1^2}{s_2^2}
+    $$
+    where $s_1^2$ and $s_2^2$ are the sample variances of two populations.
+2. **p-value**
+    *The probability of obtaining test results at least as extreme as the results actually observed during the test, assuming that the null hypothesis is correct.*
 
 ---
 
@@ -226,6 +366,33 @@
      $$
      C = \frac{\sum t(t+1) \cdot PV(CF_t)}{(1+i)^2 \cdot \text{Price}}
      $$
+
+### **Additional Financial Derivatives Formulas**
+
+1. **Put-Call Parity**
+    $$
+    C - P = S_0 - Ke^{-rT}
+    $$
+2. **Delta**
+    $$
+    \Delta = \frac{\partial C}{\partial S}
+    $$
+3. **Gamma**
+    $$
+    \Gamma = \frac{\partial^2 C}{\partial S^2}
+    $$
+4. **Vega**
+    $$
+    \nu = \frac{\partial C}{\partial \sigma}
+    $$
+5. **Theta**
+    $$
+    \Theta = \frac{\partial C}{\partial t}
+    $$
+6. **Rho**
+    $$
+    \rho = \frac{\partial C}{\partial r}
+    $$
 
 ---
 
@@ -255,10 +422,47 @@
    \text{Var}(PV) = E[PV^2] - (E[PV])^2
    $$
 
+---
 
-Find out what this is.
+## **5. Regulations and Standards (IFRS 17)**
 
-$$
-\ddot{a}_{\overline{xy}}
-\ddot{a}_{\overline{xy}}
-$$
+### **Key Considerations under IFRS 17**
+
+1. **Measurement Models**:
+    - **General Measurement Model (GMM)**: Used for most insurance contracts. Requires estimating future cash flows, discounting them, and adding a risk adjustment for non-financial risk.
+    - **Premium Allocation Approach (PAA)**: A simplified approach for short-duration contracts or when the GMM is too burdensome. Revenue is recognized as premiums are received, and a simplified liability for incurred claims is used.
+    - **Variable Fee Approach (VFA)**: Used for contracts with direct participation features. The CSM is adjusted to reflect the changes in the value of the underlying items.
+2. **Contractual Service Margin (CSM)**:
+    - Represents the unearned profit that the insurer will recognize over the coverage period.
+    - Initially measured as the difference between the fulfillment cash flows and the premiums received.
+    - Recognized in profit or loss as services are provided.
+3. **Risk Adjustment**:
+    - Reflects the compensation an insurer requires for bearing the uncertainty about the amount and timing of future cash flows.
+    - Can be determined using techniques such as Confidence Level, Cost of Capital, or Quantile techniques.
+4. **Discount Rates**:
+    - Should reflect the current market rates and the characteristics of the insurance contract liabilities.
+    - Adjustments may be needed to reflect liquidity premiums.
+5. **Presentation**:
+    - Insurers must present insurance revenue separately from insurance service expenses.
+    - Disclose significant judgments and assumptions made in applying IFRS 17.
+6. **Transition**:
+    - IFRS 17 provides different transition approaches: Full Retrospective, Modified Retrospective, and Fair Value.
+    - The choice of transition approach can significantly impact the opening balance sheet.
+7. **Relevant Formulas/Concepts for IFRS 17 Calculations**:
+    - **Best Estimate of Future Cash Flows**:
+        $$
+        BE = \sum_{t=1}^{n} \frac{E[CF_t]}{(1+r)^t}
+        $$
+        Where $E[CF_t]$ is the expected cash flow at time t, and $r$ is the discount rate.
+    - **Risk Adjustment (RA)**:
+        - Cost of Capital Approach:
+            $$
+            RA = \sum_{t=1}^{n} \frac{CF_t \times CoC}{(1+r)^t}
+            $$
+            Where $CoC$ is the cost of capital rate.
+    - **Contractual Service Margin (CSM) Amortization**:
+        $$
+        \text{Amortization} = \frac{\text{CSM at start of period}}{\text{Coverage Units}} \times \text{Coverage Units Provided}
+        $$
+
+---
