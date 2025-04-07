@@ -465,4 +465,89 @@
         \text{Amortization} = \frac{\text{CSM at start of period}}{\text{Coverage Units}} \times \text{Coverage Units Provided}
         $$
 
+
+## **6. IFRS 17 Insurance Contracts**
+
+### **Measurement Models**
+
+1. **General Measurement Model (GMM) - Building Blocks Approach**
+   $$
+   Insurance\;Contract\;Liability = FCF + RA + CSM
+   $$
+   where:
+   - FCF: Fulfilment Cash Flows
+   - RA: Risk Adjustment
+   - CSM: Contractual Service Margin
+
+2. **Premium Allocation Approach (PAA) - Liability for Remaining Coverage**
+   $$
+   LRC = Premiums\;Received - Acquisition\;Cash\;Flows + Amortization
+   $$
+
+3. **Loss Component Calculation**
+   $$
+   Loss\;Component = max(0, -CSM)
+   $$
+
+### **Risk Adjustment Calculation Methods**
+
+1. **Cost of Capital Method**
+   $$
+   RA = \sum_{t=1}^{T} \frac{CoC \cdot SCR_t}{(1 + r_f)^t}
+   $$
+   - CoC: Cost of Capital rate
+   - SCR: Solvency Capital Requirement
+
+2. **Confidence Level Approach**
+   $$
+   RA = VaR_{\alpha}(Losses) - E(Losses)
+   $$
+   where α is the confidence level (e.g., 75%)
+
+### **CSM Adjustments**
+
+1. **CSM Roll-forward**
+   $$
+   CSM_t = CSM_{t-1} \cdot (1 + i) + New\;Business - Amortization \pm Experience\;Adjustments
+   $$
+
+2. **Coverage Units Recognition**
+   $$
+   CSM\;Release = CSM_t \cdot \frac{CU_t}{\sum_{i=t}^{T} CU_i}
+   $$
+   where CU represents Coverage Units
+
+---
+
+## **6. Risk Measures**
+
+### **Value at Risk and Related Measures**
+
+1. **Value at Risk (VaR)**
+   $$
+   P(X \leq VaR_\alpha) = \alpha
+   $$
+
+2. **Conditional Tail Expectation (CTE) / Expected Shortfall**
+   $$
+   CTE_\alpha(X) = E[X|X > VaR_\alpha]
+   $$
+
+3. **Risk-Based Capital**
+   $$
+   RBC\;Ratio = \frac{Total\;Adjusted\;Capital}{Required\;Risk\;Based\;Capital}
+   $$
+
+### **Risk Adjusted Performance Measures**
+
+1. **Sharpe Ratio**
+   $$
+   SR = \frac{R_p - R_f}{\sigma_p}
+   $$
+
+2. **Risk-Adjusted Return on Capital (RAROC)**
+   $$
+   RAROC = \frac{Expected\;Return}{Economic\;Capital}
+   $$
+
 ---
